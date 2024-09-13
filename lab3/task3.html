@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Предпочтения</title>
+</head>
+
+<body>
+
+    <h2>Ваши предпочтения</h2>
+    <form id="preferencesForm">
+        <label for="username">Имя пользователя:</label>
+        <input type="text" id="username" required><br><br>
+
+        <label><input type="checkbox" id="iceCream"> Мороженое</label><br>
+        <label><input type="checkbox" id="chocolate"> Шоколад</label><br><br>
+
+        <button type="button" onclick="submitForm()">Отправить</button>
+        <button type="button" onclick="resetForm()">Сброс</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            let username = document.getElementById("username").value;
+            let likesIceCream = document.getElementById("iceCream").checked;
+            let likesChocolate = document.getElementById("chocolate").checked;
+
+            if (likesIceCream && likesChocolate) {
+                alert(username + ", вы любите и мороженое, и шоколад!");
+            } else if (likesIceCream) {
+                alert(username + ", вы любите мороженое!");
+            } else if (likesChocolate) {
+                alert(username + ", вы любите шоколад!");
+            } else {
+                alert(username + ", у вас нет предпочтений.");
+            }
+        }
+
+        function resetForm() {
+            document.getElementById("username").value = "";
+            document.getElementById("iceCream").checked = false;
+            document.getElementById("chocolate").checked = false;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Угадай число</title>
+</head>
+<body>
+
+<button onclick="guessNumber()">Угадать число</button>
+
+<script>
+    function guessNumber() {
+        let number = Math.floor(Math.random() * 10) + 1;
+        let guess = prompt("Угадайте число от 1 до 10");
+
+        if (guess > 10) {
+            alert("Вы ввели значение больше 10!");
+        } else if (guess == number) {
+            alert("Поздравляем, Вы угадали!");
+        } else {
+            alert("Не угадали! Было загадано число " + number);
+        }
+    }
+</script>
+
+</body>
+</html>
+

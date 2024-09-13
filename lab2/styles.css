@@ -1,0 +1,427 @@
+html {
+    font-size: 16px;
+}
+
+:root {
+    --blue-color: #17A2B8;
+    --blue-transparent-color: rgb(23, 162, 184, 0.5);
+    --dark-blue-color: #1891a3;
+    --border-grey-color: #E4E4E4;
+    --input-grey--color: #E0E4E7;
+    --white-transparent-color: rgba(255, 255, 255, 0.48);
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#top {
+    color: #037DFF;
+
+    margin-bottom: 0.3rem;
+    margin-left: 0.3rem;
+
+    cursor: pointer;
+}
+
+header,
+main {
+    padding: 0 3rem;
+}
+
+header {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+
+    background-color: var(--blue-color);
+}
+
+button:focus,
+button {
+    outline: none !important;
+    border: none !important;
+}
+
+button:hover {
+    background-color: var(--dark-blue-color);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+.header-menu-icon {
+    display: none;
+}
+
+.header-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.25rem;
+
+    list-style-type: none;
+}
+
+.header-nav a {
+    color: white;
+
+    text-decoration: none;
+}
+
+.header-nav a:hover {
+    color: white;
+
+    text-decoration: none;
+}
+
+.header-nav li {
+    font-size: 0.875rem;
+}
+
+.section-one-container {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: 0.875rem;
+}
+
+.section-one-header {
+    position: absolute;
+
+    margin-top: 2.5rem;
+
+    font-size: 2.1875rem;
+    font-weight: 700;
+    text-align: center;
+
+    color: #3F00FF;
+}
+
+.section-one-pic,
+.carousel-image,
+.carousel {
+    width: 100%;
+}
+
+.carousel-image {
+    height: 41.75rem;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background-color: rgba(255, 255, 255, 0.8);
+
+    color: var(--blue-color) !important;
+}
+
+.carousel-indicator {
+    background-color: var(--blue-transparent-color) !important;
+}
+
+.active {
+    background-color: var(--blue-color) !important;
+}
+
+.section-one-pic {
+    margin-bottom: 1.4375rem;
+}
+
+.header-text {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: var(--blue-color);
+
+    text-align: center;
+}
+
+.section-cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+}
+
+.section-card {
+    background-color: white;
+    border: solid 1px var(--border-grey-color);
+    border-radius: 0.375rem;
+}
+
+.section-card-bottom {
+    padding: 1rem;
+}
+
+.section-card-header {
+    text-align: center;
+
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--blue-color);
+}
+
+.section-card-text {
+    font-size: 0.875rem;
+    color: var(--blue-color);
+}
+
+.section-card-button,
+.form-button {
+    width: 6.25rem;
+    height: 2.125rem;
+
+    font-size: 0.875rem;
+
+    color: white;
+    background-color: var(--blue-color);
+
+    border-radius: 0.25rem;
+    border: none;
+}
+
+.section-card-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.25rem 0.25rem 0 0;
+
+    margin-bottom: 0.1875rem;
+}
+
+.section-two-container .section-card-image {
+    height: 13rem;
+}
+
+.input-container {
+    margin-bottom: 1rem;
+}
+
+.input-text {
+    margin-bottom: 0.5rem;
+
+    font-size: 1rem;
+}
+
+.input-box {
+    width: 100%;
+
+    border: solid 1px var(--input-grey--color);
+    border-radius: 0.25rem;
+
+    padding: 0.3rem 0.4rem;
+}
+
+.textarea-box {
+    min-height: 3.625rem;
+}
+
+.form-button {
+    margin-top: 1rem;
+}
+
+.card-doc .section-card-header {
+    padding: 1.5625rem 0 0.5rem 0;
+}
+
+footer {
+    background-color: var(--blue-color);
+    color: white;
+
+    padding-bottom: 1rem;
+    padding-top: 1.25rem;
+}
+
+.footer-p1 {
+    font-size: 0.875rem;
+}
+
+.footer-p2 {
+    font-size: 0.8125rem;
+}
+
+.footer-center {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-center-contact {
+    display: flex;
+    flex-direction: row;
+    gap: 0.875rem;
+}
+
+.footer-copyright {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-line {
+    margin: 1.875rem 13.75rem 1rem 13.75rem;
+
+    border-bottom: 1px solid #1593A6;
+}
+
+.footer-copyright-images img {
+    cursor: pointer;
+}
+
+#advantages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (min-width: 1400px) and (max-width: 10000px) {
+    html {
+        font-size: 16px;
+    }
+
+    .section-cards {
+        grid-template-columns: auto auto auto auto;
+    }
+
+    .section-card-image {
+        width: 20rem;
+    }
+
+    header,
+    main {
+        padding: 0 13.75rem;
+    }
+
+    .section-one-pic,
+    .carousel-image,
+    .carousel {
+        width: 62.5rem;
+    }
+
+    .section-one-pic {
+        margin-bottom: 1.4375rem;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .section-card {
+        width: 21rem;
+    }
+
+    header,
+    main {
+        padding: 0 5rem;
+    }
+
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+    html {
+        font-size: 15px;
+    }
+
+    .section-card {
+        width: 20rem;
+    }
+
+    header,
+    main {
+        padding: 0 3rem;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1000px) {
+    html {
+        font-size: 14px;
+    }
+
+    .section-cards {
+        justify-content: center;
+    }
+
+    .section-card {
+        width: 17rem;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 900px) {
+    html {
+        font-size: 12px;
+    }
+
+    .section-card {
+        width: 19rem;
+    }
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
+    html {
+        font-size: 11px;
+    }
+
+    .section-cards {
+        grid-template-columns: auto auto;
+    }
+
+    .section-card {
+        width: 21rem;
+    }
+
+    header {
+        display: flex !important;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .header-menu-icon {
+        display: block;
+
+        margin-bottom: 1rem;
+    }
+
+    .header-nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 10px;
+    }
+
+    .section-cards {
+        grid-template-columns: auto;
+    }
+
+    .section-card {
+        width: 100%;
+    }
+
+    header,
+    main {
+        padding: 0 1rem;
+    }
+
+    header {
+        display: flex !important;
+        flex-direction: column;
+        align-items: start;
+
+        padding-left: 1rem;
+    }
+
+    .header-menu-icon {
+        display: block;
+
+        margin-bottom: 1rem;
+    }
+
+    .header-nav {
+        display: none;
+    }
+}

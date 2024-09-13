@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оценки студентов</title>
+</head>
+
+<body>
+    <h2>Оценки студентов</h2>
+    <form id="gradesForm">
+        <label for="student1">Студент 1:</label>
+        <input type="text" id="student1" required> Оценка: <input type="number" id="grade1" min="1" max="5"
+            required><br><br>
+
+        <label for="student2">Студент 2:</label>
+        <input type="text" id="student2" required> Оценка: <input type="number" id="grade2" min="1" max="5"
+            required><br><br>
+
+        <label for="student3">Студент 3:</label>
+        <input type="text" id="student3" required> Оценка: <input type="number" id="grade3" min="1" max="5"
+            required><br><br>
+
+        <label for="student4">Студент 4:</label>
+        <input type="text" id="student4" required> Оценка: <input type="number" id="grade4" min="1" max="5"
+            required><br><br>
+
+        <label for="student5">Студент 5:</label>
+        <input type="text" id="student5" required> Оценка: <input type="number" id="grade5" min="1" max="5"
+            required><br><br>
+
+        <label for="student6">Студент 6:</label>
+        <input type="text" id="student6" required> Оценка: <input type="number" id="grade6" min="1" max="5"
+            required><br><br>
+
+        <label for="student7">Студент 7:</label>
+        <input type="text" id="student7" required> Оценка: <input type="number" id="grade7" min="1" max="5"
+            required><br><br>
+
+        <label for="student8">Студент 8:</label>
+        <input type="text" id="student8" required> Оценка: <input type="number" id="grade8" min="1" max="5"
+            required><br><br>
+
+        <button type="button" onclick="calculateAverage()">СРЕДНИЙ БАЛЛ</button>
+        <button type="button" onclick="showExcellent()">ОТЛИЧНИКИ</button>
+        <button type="button" onclick="showPassed()">СДАНО</button>
+    </form>
+
+    <script>
+        function validateGrade(gradeInput) {
+            const grade = parseInt(gradeInput.value);
+            if (grade < 1 || grade > 5) {
+                alert("Оценка должна быть в диапазоне от 1 до 5");
+                gradeInput.value = '';
+            }
+        }
+
+        for (i = 1; i < 8; i++) {
+            const gradeInput = document.getElementById('grade' + i);
+            gradeInput.addEventListener('input', () => validateGrade(gradeInput));
+        }
+
+        function getGrades() {
+            return [
+                parseInt(document.getElementById('grade1').value),
+                parseInt(document.getElementById('grade2').value),
+                parseInt(document.getElementById('grade3').value),
+                parseInt(document.getElementById('grade4').value),
+                parseInt(document.getElementById('grade5').value),
+                parseInt(document.getElementById('grade6').value),
+                parseInt(document.getElementById('grade7').value),
+                parseInt(document.getElementById('grade8').value)
+            ];
+        }
+
+        function calculateAverage() {
+            const grades = getGrades();
+            const average = grades.reduce((sum, grade) => sum + grade, 0) / grades.length;
+            alert("Средний балл: " + average.toFixed(2));
+        }
+
+        function showExcellent() {
+            const grades = getGrades();
+            const excellentCount = grades.filter(grade => grade === 5).length;
+            alert("Количество отличников: " + excellentCount);
+        }
+
+        function showPassed() {
+            const grades = getGrades();
+            const passedCount = grades.filter(grade => grade >= 3).length;
+            const failedCount = grades.filter(grade => grade < 3).length;
+            alert("Сдали: " + passedCount + ", не сдали: " + failedCount);
+        }
+    </script>
+</body>
+
+</html>

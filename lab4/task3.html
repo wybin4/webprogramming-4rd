@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Задание 3</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+  </table>
+
+  <script>
+    const tableRows = document.getElementsByTagName("tr");
+    for (let i = 0; i < tableRows.length; i++) {
+      if (i % 2 === 0) {
+        tableRows[i].className = "redRow";
+      } else {
+        tableRows[i].className = "blueRow";
+      }
+    }
+  </script>
+
+  <style>
+    .redRow {
+      background-color: red;
+    }
+
+    .blueRow {
+      background-color: blue;
+    }
+  </style>
+</body>
+</html>

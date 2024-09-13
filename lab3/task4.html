@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Марафон</title>
+</head>
+<body>
+
+<h2>Результаты марафона</h2>
+<form id="marathonForm">
+    <label for="name1">Участник 1:</label>
+    <input type="text" id="name1" required><br>
+    <label for="time1">Время:</label>
+    <input type="number" id="time1" required><br><br>
+
+    <label for="name2">Участник 2:</label>
+    <input type="text" id="name2" required><br>
+    <label for="time2">Время:</label>
+    <input type="number" id="time2" required><br><br>
+
+    <label for="name3">Участник 3:</label>
+    <input type="text" id="name3" required><br>
+    <label for="time3">Время:</label>
+    <input type="number" id="time3" required><br><br>
+
+    <label for="name4">Участник 4:</label>
+    <input type="text" id="name4" required><br>
+    <label for="time4">Время:</label>
+    <input type="number" id="time4" required><br><br>
+
+    <button type="button" onclick="findWinner()">Найти победителя</button>
+</form>
+
+<script>
+    function findWinner() {
+        let participants = [
+            { name: document.getElementById("name1").value, time: parseFloat(document.getElementById("time1").value) },
+            { name: document.getElementById("name2").value, time: parseFloat(document.getElementById("time2").value) },
+            { name: document.getElementById("name3").value, time: parseFloat(document.getElementById("time3").value) },
+            { name: document.getElementById("name4").value, time: parseFloat(document.getElementById("time4").value) }
+        ];
+
+        let winner = participants.reduce((prev, curr) => prev.time < curr.time ? prev : curr);
+        alert("Победитель: " + winner.name + ", время: " + winner.time + " часов");
+    }
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Задание 6</title>
+</head>
+
+<body>
+  <h2>Выберите товар:</h2>
+  <select id="itemSelect">
+    <option value="Товар 1">Товар 1</option>
+    <option value="Товар 2">Товар 2</option>
+    <option value="Товар 3">Товар 3</option>
+    <option value="Товар 4">Товар 4</option>
+    <option value="Товар 5">Товар 5</option>
+  </select>
+  <button id="addButton">Добавить</button>
+  <h2>Список покупок:</h2>
+  <ul id="shoppingList"></ul>
+  <script>
+    const shoppingList = document.getElementById("shoppingList");
+    const itemSelect = document.getElementById("itemSelect");
+    const addButton = document.getElementById("addButton");
+
+    addButton.addEventListener("click", () => {
+      const selectedItem = itemSelect.value;
+      if (selectedItem !== "") {
+        const listItem = document.createElement("li");
+        listItem.innerText = selectedItem;
+        shoppingList.appendChild(listItem);
+      }
+    });
+  </script>
+</body>
+
+</html>

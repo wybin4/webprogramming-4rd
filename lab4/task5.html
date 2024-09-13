@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Задание 5</title>
+</head>
+
+<body>
+  <h2>Выберите товар:</h2>
+  <input type="text" id="newItem" placeholder="Введите товар">
+  <button id="addButton">Добавить</button>
+  <h2>Список покупок:</h2>
+  <ul id="shoppingList"></ul>
+  <script>
+    const shoppingList = document.getElementById("shoppingList");
+    const newItemInput = document.getElementById("newItem");
+    const addButton = document.getElementById("addButton");
+
+    addButton.addEventListener("click", () => {
+      const newItem = newItemInput.value;
+      if (newItem !== "") {
+        const listItem = document.createElement("li");
+        listItem.innerText = newItem;
+        shoppingList.appendChild(listItem);
+        newItemInput.value = "";
+      }
+    });
+  </script>
+</body>
+
+</html>

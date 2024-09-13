@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Создание элементов</title>
+</head>
+
+<body>
+    <button id="addRandomNumberButton">Добавить случайное число</button>
+    <div id="numbersContainer"></div>
+
+    <script>
+        function addRandomNumber() {
+            const randomNumber = Math.floor(Math.random() * 100) + 1;
+            const numberParagraph = document.createElement("p");
+            numberParagraph.textContent = randomNumber;
+            const numbersContainer = document.getElementById("numbersContainer");
+            numbersContainer.appendChild(numberParagraph);
+        }
+
+        const addRandomNumberButton = document.getElementById("addRandomNumberButton");
+        addRandomNumberButton.addEventListener("click", addRandomNumber);
+    </script>
+</body>
+
+</html>

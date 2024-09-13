@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расчет зарплаты</title>
+</head>
+<body>
+    <h2>Расчет заработной платы</h2>
+    <form id="salaryForm">
+        <label for="hourlyRate">Зарплата в час ($):</label>
+        <input type="number" id="hourlyRate" min="8" required><br><br>
+
+        <label for="hoursWorked">Кол-во проработанных часов:</label>
+        <input type="number" id="hoursWorked" min="1" max="60" required><br><br>
+
+        <button type="button" onclick="calculateSalary()">Расчет</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateSalary() {
+            const hourlyRate = parseFloat(document.getElementById('hourlyRate').value);
+            const hoursWorked = parseFloat(document.getElementById('hoursWorked').value);
+
+            if (isNaN(hourlyRate) || isNaN(hoursWorked)) {
+                alert("Ошибка! Введите корректные данные.");
+                return;
+            }
+
+            if (hourlyRate < 8) {
+                alert("Ошибка! Зарплата не может быть меньше 8 долларов в час.");
+                return;
+            }
+
+            if (hoursWorked > 60) {
+                alert("Ошибка! Работник не может работать больше 60 часов в неделю.");
+                return;
+            }
+
+            let totalPay = 0;
+
+            if (hoursWorked <= 40) {
+                totalPay = hourlyRate * hoursWorked;
+            } else {
+                const overtimeHours = hoursWorked - 40;
+                totalPay = hourlyRate * 40 + (hourlyRate * 1.5 * overtimeHours);
+            }
+
+            document.getElementById('result').innerText = `Зарплата за неделю: $${totalPay.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
+

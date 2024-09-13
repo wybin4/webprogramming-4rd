@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Определение сезона</title>
+</head>
+<body>
+    <h2>Определение сезона</h2>
+    <form id="seasonForm">
+        <label for="month">Введите месяц (1-12):</label>
+        <input type="number" id="month" min="1" max="12" required><br><br>
+
+        <button type="button" onclick="determineSeason()">Узнать сезон</button>
+    </form>
+
+    <script>
+        function determineSeason() {
+            const month = parseInt(document.getElementById('month').value);
+
+            let season = "";
+            if (month >= 3 && month <= 5) {
+                season = "Весна";
+            } else if (month >= 6 && month <= 8) {
+                season = "Лето";
+            } else if (month >= 9 && month <= 11) {
+                season = "Осень";
+            } else if (month === 12 || month === 1 || month === 2) {
+                season = "Зима";
+            } else {
+                alert("Неверный ввод месяца.");
+                return;
+            }
+
+            alert(`Это ${season}`);
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Задание 4</title>
+  <style>
+    #accordionContent {
+      display: block;
+      background-color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="accordion">
+    <h2>Оглавление</h2>
+    <p id="accordionHeader"><i>Свернуть</i></p>
+    <div id="accordionContent">
+      <p>Глава 1</p>
+      <p>Глава 2</p>
+      <p>Глава 3</p>
+    </div>
+  </div>
+
+  <script>
+    const accordionHeader = document.getElementById("accordionHeader");
+    const accordionContent = document.getElementById("accordionContent");
+
+    accordionHeader.addEventListener("click", () => {
+      if (accordionContent.style.display === "none") {
+        accordionContent.style.display = "block";
+        accordionHeader.innerHTML = "<i>Свернуть</i>";
+      } else {
+        accordionContent.style.display = "none";
+        accordionHeader.innerHTML = "<i>Развернуть</i>";
+      }
+    });
+  </script>
+</body>
+
+</html>

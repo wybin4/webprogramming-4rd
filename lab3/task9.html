@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заправка бензина</title>
+</head>
+
+<body>
+    <h2>Заправка бензина</h2>
+    <form id="fuelForm">
+        <label for="fuelCost">Стоимость одного литра бензина (руб):</label>
+        <input type="number" id="fuelCost" min="1" required><br><br>
+
+        <label for="moneyGiven">Внесенная сумма (руб):</label>
+        <input type="number" id="moneyGiven" min="1" required><br><br>
+
+        <label for="litersNeeded">Необходимое количество литров:</label>
+        <input type="number" id="litersNeeded" min="1" required><br><br>
+
+        <button type="button" onclick="calculateFuel()">Проверить</button>
+    </form>
+
+    <script>
+        function calculateFuel() {
+            const fuelCost = parseFloat(document.getElementById('fuelCost').value);
+            const moneyGiven = parseFloat(document.getElementById('moneyGiven').value);
+            const litersNeeded = parseFloat(document.getElementById('litersNeeded').value);
+
+            if (fuelCost <= 0 || moneyGiven <= 0 || litersNeeded <= 0) {
+                alert("Введены некорректные значения. Все значения должны быть больше 0.");
+                return;
+            }
+
+            const totalCost = fuelCost * litersNeeded;
+
+            if (moneyGiven === totalCost) {
+                alert("Спасибо. Машина заправлена.");
+            } else if (moneyGiven > totalCost) {
+                const change = moneyGiven - totalCost;
+                alert(`Возьмите сдачу: ${change.toFixed(2)} руб.`);
+            } else {
+                const shortage = totalCost - moneyGiven;
+                const affordableLiters = moneyGiven / fuelCost;
+                alert(`Не хватает: ${shortage.toFixed(2)} руб. Вы можете купить ${affordableLiters.toFixed(2)} литров бензина.`);
+            }
+        }
+    </script>
+</body>
+
+</html>

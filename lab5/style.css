@@ -1,0 +1,146 @@
+:root {
+    --green: #4CAF50;
+    --grey: #ccc;
+    --grey-dark: #929292;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#gameScreen,
+#resultScreen {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px 20px 40px 20px;
+}
+
+#game,
+#resultScreen {
+    display: none;
+}
+
+#loginScreen {
+    display: block;
+    width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px 20px 40px 20px;
+}
+
+#loginScreen input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+}
+
+input {
+    outline: none !important;
+}
+
+#loginScreen button {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: var(--grey-dark);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    margin-top: 1rem;
+}
+
+#gameScreen {
+    position: relative;
+    background-color: #e0e0e0;
+}
+
+#gameScreen #playerNameDisplay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#gameScreen #timer,
+#gameScreen #lives,
+#gameScreen #score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#gameScreen #basket {
+    position: absolute;
+    bottom: 10px;
+    width: 100px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 5px;
+}
+
+#gameScreen .fruit {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ff0000;
+    animation: fruitFall linear forwards;
+}
+
+@keyframes fruitFall {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(370px);
+    }
+}
+
+#resultScreen {
+    text-align: center;
+
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#resultScreen h2 {
+    margin-bottom: 20px;
+}
+
+#resultScreen p {
+    margin-bottom: 10px;
+}
+
+#resultScreen button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    display: flex;
+    gap: 0.3rem;
+}

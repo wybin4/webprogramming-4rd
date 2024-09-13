@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Покупка книг</title>
+</head>
+
+<body>
+    <h2>Покупка книг</h2>
+    <form id="booksForm">
+        <label for="bookCost">Стоимость книг (руб):</label>
+        <input type="number" id="bookCost" min="1" required><br><br>
+
+        <label for="moneyGiven">Внесенная сумма (руб):</label>
+        <input type="number" id="moneyGiven" min="1" required><br><br>
+
+        <button type="button" onclick="calculateChange()">Проверить</button>
+    </form>
+
+    <script>
+        function calculateChange() {
+            const bookCost = parseFloat(document.getElementById('bookCost').value);
+            const moneyGiven = parseFloat(document.getElementById('moneyGiven').value);
+
+            if (moneyGiven === bookCost) {
+                alert("Спасибо");
+            } else if (moneyGiven > bookCost) {
+                const change = moneyGiven - bookCost;
+                alert("Возьмите сдачу: " + change.toFixed(2) + " руб.");
+            } else {
+                const shortage = bookCost - moneyGiven;
+                alert("Не хватает: " + shortage.toFixed(2) + " руб.");
+            }
+        }
+    </script>
+</body>
+
+</html>

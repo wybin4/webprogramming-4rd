@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Онлайн игра</title>
+  <link rel="stylesheet" href="./style.css" />
+
+</head>
+
+<body>
+
+  <div id="loginScreen">
+    <h2>Добро пожаловать!</h2>
+    <input type="text" id="playerName" placeholder="Введите ваше имя">
+    <button id="login" disabled>Войти</button>
+  </div>
+
+  <div id="game">
+    <div class="card">
+      <div class="info">
+        Жизни: <div id="lives"></div>
+      </div>
+      <div class="info" id="autocollect-cooldown">
+        Автосбор: <div id="autocollect-cooldown-time">Автосбор готов</div>
+      </div>
+      <div class="info">
+        Счёт: <div id="score"></div>
+      </div>
+    </div>
+
+
+    <div id="gameScreen">
+      <div id="playerNameDisplay"></div>
+      <div id="timer"></div>
+      <div id="basket"></div>
+    </div>
+  </div>
+
+  <div id="resultScreen">
+    <h2>Результат игры</h2>
+    <div>
+      <p>Время: <span id="resultTime"></span></p>
+      <p>Счет: <span id="resultScore"></span></p>
+      <p id="resultMessage"></p>
+    </div>
+    <button id="restart">Играть сначала</button>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
